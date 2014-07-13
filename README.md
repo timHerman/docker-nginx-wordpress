@@ -6,7 +6,7 @@ Docker NGINX + WP + W3 total cache Container
 This container is optimized for running Wordpress and W3 total cache using NGINX
 
 This container requires a seperate dedicated mysql container (timherman/mysql) to run.
-You can find timherman/mysql either at docker (https://registry.hub.docker.com/u/timherman/mysql/) or github (https://github.com/timHerman/docker-nginx-wordpress)
+You can find timherman/mysql either at docker (https://registry.hub.docker.com/u/timherman/mysql/) or github (https://github.com/timHerman/docker-mysql)
 
 ## Usage by example
 
