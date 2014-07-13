@@ -24,10 +24,10 @@ docker run -d --name="be.punk.www.mysql" -e "MYSQL_LOCAL_USER=[username]" -e "MY
 * -d : Run daemonized
 * --Name : The name of the container
 * -e : Environmental parameters
-..* MYSQL_ROOT_PASSWORD : When no root password of the database is generated there will be one generated for you
-..* MYSQL_LOCAL_USER : The mysql username for your application
-..* MYSQL_LOCAL_DATABASE : The mysql database name for your application
-..* MYSQL_LOCAL_PASSWORD : The mysql database password
+  * MYSQL_ROOT_PASSWORD : When no root password of the database is generated there will be one generated for you
+  * MYSQL_LOCAL_USER : The mysql username for your application
+  * MYSQL_LOCAL_DATABASE : The mysql database name for your application
+  * MYSQL_LOCAL_PASSWORD : The mysql database password
 * -v : Linking a directory on your host with the mysql data of the container
 * timherman/mysql : The name of the repository	
 
@@ -45,7 +45,7 @@ docker run -d --name="be.punk.www.wordpress" -p 80:80 -e="ROUTER_VIRTUAL_HOST=ww
 * -d : Run daemonized
 * -p : Map the 80 port the container to the 80 port of the host ( Not required when using a reverse proxy )
 * -e : Environmental parameters
-..* ROUTER_VIRTUAL_HOST : For reverse proxy automatisation (not required)
+  * ROUTER_VIRTUAL_HOST : For reverse proxy automatisation (not required)
 * -v : Linking a directory on your host with the wordpress data of the container
 * --link : linking this container be.punk.www.mysql and set it up with the hostname 'db'
 * timherman/nginx-wordpress : The name of the repositor
