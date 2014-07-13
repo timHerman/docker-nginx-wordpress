@@ -1,5 +1,6 @@
-#docker-nginx-wordpress ( Docker NGINX + WP + W3 total cache Container )
-======================
+#docker-nginx-wordpress
+Docker NGINX + WP + W3 total cache Container 
+ 
 ## About
 
 This container is optimized for running Wordpress and W3 total cache using NGINX
