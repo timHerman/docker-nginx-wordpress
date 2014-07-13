@@ -1,25 +1,23 @@
-docker-nginx-wordpress
+#docker-nginx-wordpress ( Docker NGINX + WP + W3 total cache Container )
 ======================
+## About
 
-# About
-
-Docker NGINX container optimized for Wordpress and W3 total cache
-This Container running nginx optimized for use with Wordpress.
+This container is optimized for running Wordpress and W3 total cache using NGINX
 
 This container requires a seperate dedicated mysql container (timherman/mysql) to run.
 You can find timherman/mysql either at docker (https://registry.hub.docker.com/u/timherman/mysql/) or github (https://github.com/timHerman/docker-nginx-wordpress)
 
-# Usage by example
+## Usage by example
 
-## The mysql container
+### The mysql container
 
-### Running the container
+#### Running the container
 
 ```shell
 docker run -d --name="be.punk.www.mysql" -e "MYSQL_LOCAL_USER=[username]" -e "MYSQL_LOCAL_DATABASE=[database]" -e "MYSQL_LOCAL_PASSWORD=[password]" -v /location/of/mysqldata/at/host/:/var/lib/mysql/  timherman/mysql
 ```
 
-### How it works
+#### How it works
 
 * -d : Run daemonized
 * --Name : The name of the container
@@ -32,15 +30,15 @@ docker run -d --name="be.punk.www.mysql" -e "MYSQL_LOCAL_USER=[username]" -e "MY
 * timherman/mysql : The name of the repository	
 
 
-## The wordpress container
+### The wordpress container
 
-### Running the container
+#### Running the container
 
 ```shell
 docker run -d --name="be.punk.www.wordpress" -p 80:80 -e="ROUTER_VIRTUAL_HOST=www.reisplanner.eu" -v /location/of/wordpressdata/at/host/:/var/www/ --link be.punk.www.mysql:db timherman/nginx-wordpress
 ```
 
-### How it works
+#### How it works
 
 * -d : Run daemonized
 * -p : Map the 80 port the container to the 80 port of the host ( Not required when using a reverse proxy )
@@ -51,7 +49,7 @@ docker run -d --name="be.punk.www.wordpress" -p 80:80 -e="ROUTER_VIRTUAL_HOST=ww
 * timherman/nginx-wordpress : The name of the repositor
 
 
-# Comments
+## Comments
 
 In our example the wordpress container is linked to the mysql container under the alias db.
 This means that you'll have to edit your wp-config file in such a way that the mysql host is no longer localhost but db.
@@ -65,3 +63,8 @@ For more information leave a message or visit http://www.punk.be
 
 Regards,
 Tim
+
+
+Inspiration from:
+https://rtcamp.com/wordpress-nginx/tutorials/single-site/w3-total-cache/
+https://github.com/bradleyboy/docker-koken-nginx/blob/master/Dockerfile
