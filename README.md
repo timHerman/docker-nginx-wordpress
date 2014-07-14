@@ -23,7 +23,7 @@ docker run -d --name="be.punk.www.mysql" -e "MYSQL_LOCAL_USER=[username]" -e "MY
 * -d : Run daemonized
 * --Name : The name of the container
 * -e : Environmental parameters
-  * MYSQL_ROOT_PASSWORD : When no root password of the database is generated there will be one generated for you
+  * MYSQL_ROOT_PASSWORD : When no root password of the database is set there will be one generated for you
   * MYSQL_LOCAL_USER : The mysql username for your application
   * MYSQL_LOCAL_DATABASE : The mysql database name for your application
   * MYSQL_LOCAL_PASSWORD : The mysql database password
