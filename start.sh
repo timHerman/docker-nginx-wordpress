@@ -2,6 +2,6 @@
 mkdir -p /var/www/htdocs
 mkdir -p /var/www/logs
 chown www-data.www-data /var/www/ -Rf
-chmod 755 /var/www/htdocs -Rfv
+chmod 755 /var/www/htdocs -Rf
 # start all the services
 /usr/local/bin/supervisord -n
