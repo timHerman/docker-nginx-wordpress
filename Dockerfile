@@ -42,11 +42,7 @@ ADD ./start.sh /start.sh
 RUN chmod 755 /start.sh
 
 VOLUME /var/www
-#RUN mkdir -p /var/www/htdocs
-#RUN mkdir -p /var/www/logs
-#RUN chown www-data.www-data /var/www/ -Rf
 
 EXPOSE 80
 
-CMD ["bash"]
-#CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/start.sh"]
