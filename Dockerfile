@@ -48,4 +48,5 @@ VOLUME /var/www
 
 EXPOSE 80
 
-CMD ["/bin/bash", "/start.sh"]
+CMD ["bash"]
+#CMD ["/bin/bash", "/start.sh"]
