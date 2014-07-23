@@ -50,5 +50,4 @@ RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["/bin/bash"]
-#CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/start.sh"]
