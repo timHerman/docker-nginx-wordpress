@@ -12,7 +12,7 @@ RUN apt-get update
 RUN apt-get -y upgrade
 
 # Basic Requirements
-RUN apt-get -y install nginx php5-fpm php5-mysql php-apc pwgen python-setuptools curl git
+RUN apt-get -y install nginx php5-fpm php5-mysql php-apc pwgen python-setuptools curl git ssmtp
  
 # Wordpress Requirements
 RUN apt-get -y install php5-curl php5-gd php5-intl php-pear php5-imagick php5-imap php5-mcrypt php5-memcache php5-ming php5-ps php5-pspell php5-recode php5-sqlite php5-tidy php5-xmlrpc php5-xsl
@@ -45,4 +45,10 @@ VOLUME /var/www
 
 EXPOSE 80
 
-CMD ["/bin/bash", "/start.sh"]
+ADD ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
+CMD ["/bin/bash"]
+#CMD ["/bin/bash", "/start.sh"]
