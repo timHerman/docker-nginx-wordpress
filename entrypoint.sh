@@ -11,10 +11,13 @@ fi
 
 echo "root=noReply@${DEFAULT_MAILSERVER}" > /etc/ssmtp/ssmtp.conf
 
-if [[ "x"ROUTER_VIRTUAL_HOST != "x" ]]; then
-		echo "root=noReply@${ROUTER_VIRTUAL_HOST}" > /etc/ssmtp/ssmtp.conf
-		sed -i -e"s:server_name localhost:server_name ${ROUTER_VIRTUAL_HOST}:g" /etc/nginx/sites-available/default
+
+if [[ "x"ROUTER_VIRTUAL_HOST = "x" ]]; then
+	export ROUTER_VIRTUAL_HOST="localhost"
 fi
+
+echo "root=noReply@${ROUTER_VIRTUAL_HOST}" > /etc/ssmtp/ssmtp.conf
+sed -i -e"s:server_name localhost:server_name ${ROUTER_VIRTUAL_HOST}:g" /etc/nginx/sites-available/default
 
 echo "mailhub=${DEFAULT_MAILSERVER}" >> /etc/ssmtp/ssmtp.conf
 echo "hostname=${DEFAULT_MAILSERVER}" >> /etc/ssmtp/ssmtp.conf
