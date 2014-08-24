@@ -36,7 +36,7 @@ docker run -d --name="be.punk.www.mysql" -e "MYSQL_LOCAL_USER=[username]" -e "MY
 #### Running the container
 
 ```shell
-docker run -d --name="be.punk.www.wordpress" -p 80:80 -e="ROUTER_VIRTUAL_HOST=www.reisplanner.eu" -v /location/of/wordpressdata/at/host/:/var/www/ --link be.punk.www.mysql:db timherman/nginx-wordpress
+docker run -d --name="be.punk.www.wordpress" -p 80:80 -v /location/of/wordpressdata/at/host/:/var/www/ --link be.punk.www.mysql:db timherman/nginx-wordpress
 ```
 
 #### How it works
@@ -44,8 +44,7 @@ docker run -d --name="be.punk.www.wordpress" -p 80:80 -e="ROUTER_VIRTUAL_HOST=ww
 * -d : Run daemonized
 * -p : Map the 80 port the container to the 80 port of the host ( Not required when using a reverse proxy )
 * -e : Environmental parameters
-  * ROUTER_VIRTUAL_HOST : For reverse proxy automatisation (not required)
-  * MAILSERVER : External smtp server (smart host)
+  * MAILSERVER : External smtp server (smart host, default value mailserver)
 * -v : Linking a directory on your host with the wordpress data of the container
 * --link : linking this container be.punk.www.mysql and set it up with the hostname 'db'
 * timherman/nginx-wordpress : The name of the repositor
